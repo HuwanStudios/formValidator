@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function great(){
+            //Grab the value from the input 
+            //Go into the document look for ID 'num' and share the value
+            let x;
+            let discount;
+            x = document.getElementById('num').value;
+            //Compare the value to true or false number
+            //If x value is greater than 10 equal true; else false
+            if (x > 10) {
+            //If true display true
+                //Number is greater than 10 - 
+                //onclick='document.getElementById'
+                document.getElementById('message').innerHTML = "Perfect your input is greater than 10!";
+                document.getElementById('num').className = 'bg-green-300';
+                discount = 10;
+            }   else if (x > 5) {
+                document.getElementById('message').innerHTML = "Perfect your input is greater than 5!";
+                document.getElementById('num').className = 'bg-yellow-300';
+                discount = 5;
+            } else {
+            //Else if it is false display false
+                document.getElementById('message').innerHTML = "Sorry your input is lower than 10!";
+                document.getElementById('num').className = 'bg-red-300';
+                discount = 0;
+            }
+        }
+    </script>
+</head>
+<body class="text-center m-4">
+    <p id="message"> Message Area</p>
+    <input  class="p-2 border bg-slate-300" id="num" value="">
+    <button onclick="great()">Number Check</button>
+
+</body>
+</html>
+
+<!-- If number is greater than 10 display warning message -->
+<!-- variablename = (condition) ? value1:value2  -->

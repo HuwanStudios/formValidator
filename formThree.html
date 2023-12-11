@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function checkerLength(){
+            //Grab value from input box (id) & assign it to variable x
+            let password = document.getElementById('pwd').value;
+            //define condition/requirement as a refular expression
+            //Compare value to condition/requirements/method 
+            if (password.length > 5) {
+                //If true say password is valid 
+                document.getElementById('message').innerHTML = 'Yay, password is valid!';
+                document.getElementById('pwd').className = 'bg-blue-300';
+            } else {
+                //Else if false say password is invalid 
+                document.getElementById('message').innerHTML = 'Booo, password is rubish!';   
+                document.getElementById('pwd').className = 'bg-red-300';
+            }
+        }
+
+        function checkerUC() {
+            //grab the value of input box (), assign to variable x
+            let password = document.getElementById('pwd').value;
+            //define condition/requirement as a refular expression
+            let conditionUC = /[A-Z]/g;
+            //compare the value to the condition
+            if (password.match(conditionUC)) {
+                //If true say yay
+                document.getElementById('message').innerHTML = 'Yay, Valid UC Password!';
+                document.getElementById('pwd').className = 'bg-green-300';
+            } else {
+                //Else it is false say nay
+                document.getElementById('message').innerHTML = 'Nay, Invalid UC Password!';
+                document.getElementById('pwd').className = 'bg-red-200';
+            }
+        }
+
+        //The variable and if statement should be email, but for testing puporses we will leave on paasword
+        function checkerEM() {
+            //grab the value of input box (), assign to variable x
+            let password = document.getElementById('pwd').value;
+            //define condition/requirement as a refular expression
+            let conditionEM = /@/g;
+            //compare the value to the condition
+            if (password.match(conditionEM)) {
+                //If true say yay
+                document.getElementById('message').innerHTML = 'Yay, Valid EM Password!';
+                document.getElementById('pwd').className = 'bg-green-300';
+            } else {
+                //Else it is false say nay
+                document.getElementById('message').innerHTML = 'Nay, Invalid EM Password!';
+                document.getElementById('pwd').className = 'bg-red-200';
+            }
+        }
+
+        function checkerLC() {
+            //grab the value of input box (), assign to variable x
+            let password = document.getElementById('pwd').value;
+            //define condition/requirement as a refular expression
+            let conditionLC = /[a-z]/g;
+            //compare the value to the condition
+            if (password.match(conditionLC)) {
+                //If true say yay
+                document.getElementById('message').innerHTML = 'Yay, Valid LC Password!';
+                document.getElementById('pwd').className = 'bg-green-300';
+            } else {
+                //Else it is false say nay
+                document.getElementById('message').innerHTML = 'Nay, Invalid LC Password!';
+                document.getElementById('pwd').className = 'bg-red-200';
+            }
+        }
+        
+        function checkerNum() {
+            //grab the value of input box (), assign to variable x
+            let password = document.getElementById('pwd').value;
+            //define condition/requirement as a refular expression
+            let conditionNum = /[0-9]/d;
+            //compare the value to the condition
+            if (password.match(conditionNum)) {
+                //If true say yay
+                document.getElementById('message').innerHTML = 'Yay, Valid Num Password!';
+                document.getElementById('pwd').className = 'bg-green-300';
+            } else {
+                //Else it is false say nay
+                document.getElementById('message').innerHTML = 'Nay, Invalid Num Password!';
+                document.getElementById('pwd').className = 'bg-red-200';
+            }
+        }
+        
+        function checkerSpecialChar() {
+            //grab the value of input box (), assign to variable x
+            let password = document.getElementById('pwd').value;
+            //define condition/requirement as a refular expression
+            let conditionSC = /[`~!@#$%^&*()-_=/*-+;':",./<>?+]/g;
+            //compare the value to the condition
+            if (password.match(conditionSC)) {
+                //If true say yay
+                document.getElementById('message').innerHTML = 'Yay, Valid SC Password!';
+                document.getElementById('pwd').className = 'bg-green-300';
+            } else {
+                //Else it is false say nay
+                document.getElementById('message').innerHTML = 'Nay, Invalid SC Password!';
+                document.getElementById('pwd').className = 'bg-red-200';
+            }
+        }
+        
+
+    </script>
+</head>
+<body>
+
+    <p class="bg-slate-300" id="message">
+        <span id="conditionEmail"></span>
+        <span id="conditionSC"></span>
+        <span id="conditionNum"></span>
+        <span id="conditionLC"></span>
+        <span id="conditionUC"></span>
+        <span id="conditionL"></span>
+    </p>
+
+    <input type="text" id="pwd" class="p-2 border bg-green-300" placeholder="Password:" value=""><br>
+
+
+    <button id="btn" class="p-2 border-2 bg-yellow-300" onclick="checkerSpecialChar()" >Checker</button>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        function check() {
+            //grab the value of input box (), assign to variable x
+            let email = document.getElementById('email').value;
+            //define condition/requirement as a refular expression
+            let condition = /@/i;
+            //compare the value to the condition
+            if (email.match(condition)) {
+                //If true say yay
+                document.getElementById('message').innerHTML = 'Yay, Valid Email!';
+                document.getElementById('email').className = 'bg-green-300';
+            } else {
+                //Else it is false say nay
+                document.getElementById('message').innerHTML = 'Nay, Invalid Email!';
+                document.getElementById('email').className = 'bg-red-200';
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <p id="message"></p>
+    <input class="p-2 bg-slate-300" type="text" id="email" value="">
+    <button onclick="check()" class="p-2 bg-blue-300">Check</button>
+</body>
+</html>
